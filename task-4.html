@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compare Objects</title>
+  <style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightblue;
+  color:black;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+form {
+  margin-top: 20px;
+}
+input {
+  width: 300px;
+  margin-bottom: 10px;
+}
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+#output {
+    margin-top: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <h1>Compare Objects</h1>
+    <input type="text" id="object1" placeholder="Enter the first object">
+    <br> <br>
+    <input type="text" id="object2" placeholder="Enter the second object">
+    <br> <br>
+    <button onclick="compareObjects()">Compare Objects</button>
+    <br> <br>
+  </form>
+  <div id="output"></div>
+  <script>
+    function compareObjects() {
+  // Get the two objects from the form.
+  var object1 = document.getElementById("object1").value;
+  var object2 = document.getElementById("object2").value;
+  // Convert the objects to JSON stringfy.
+  var object1JSON = JSON.stringify(object1);
+  var object2JSON = JSON.stringify(object2);
+  // Compare the two JSON strings.
+  if (object1JSON === object2JSON) {
+    document.getElementById("output").innerHTML = "true";
+  } else {
+    document.getElementById("output").innerHTML = "false.";
+  }
+}
+  </script>
+</body>
+</html>
